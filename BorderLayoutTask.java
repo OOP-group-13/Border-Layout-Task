@@ -2,34 +2,35 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BorderLayoutTask {
-
+    JFrame frame;
+    JLabel titleLabel;
+    JPanel panelWest;
+    JTextArea textArea;
+    JButton submitButton;
     public BorderLayoutTask() {
-        JFrame BorderFrame = new JFrame("BorderLayout Demo");
-        BorderFrame.setSize(600, 400);
-        BorderFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        BorderFrame.setLayout(new BorderLayout());
+        JFrame frame = new JFrame("BorderLayout Demo");
+        frame.setSize(600, 400);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new BorderLayout());
 
         JLabel titleLabel = new JLabel("Application Title", SwingConstants.CENTER);
-        BorderFrame.add(titleLabel, BorderLayout.NORTH);
+        frame.add(titleLabel, BorderLayout.NORTH);
 
-        JPanel JPanelOne = new JPanel();
-        JPanelOne.setLayout(new GridLayout(3, 1));
-        JButton JButtonOne = new JButton("Option 1");
-        JButton JButtonTwo = new JButton("Option 2");
-        JButton JButtonThree = new JButton("Option 3");
-        JPanelOne.add(JButtonOne);
-        JPanelOne.add(JButtonTwo);
-        JPanelOne.add(JButtonThree);
-        BorderFrame.add(JPanelOne, BorderLayout.WEST);
+        JPanel panelWest = new JPanel();
+        panelWest.setLayout(new GridLayout(3, 1));
+        
+        panelWest.add(new JButton("Option 1"));
+        panelWest.add(new JButton("Option 2"));
+        panelWest.add(new JButton("Option 3"));
+        frame.add(JPanelOne, BorderLayout.WEST);
 
-        JTextArea JTextAreaOne = new JTextArea();
-        JScrollPane JScrollPaneOne = new JScrollPane(JTextAreaOne);
-        BorderFrame.add(JScrollPaneOne, BorderLayout.CENTER);
+        JTextArea textArea = new JTextArea();
+        frame.add(new JScrollPane(textArea), BorderLayout.CENTER);
 
-        JButton JButtonFour = new JButton("Submit");
-        BorderFrame.add(JButtonFour, BorderLayout.SOUTH);
+        JButton submitButton = new JButton("Submit");
+        frame.add(submitButton, BorderLayout.SOUTH);
 
-        BorderFrame.setVisible(true);
+        frame.setVisible(true);
     }
 
 }
