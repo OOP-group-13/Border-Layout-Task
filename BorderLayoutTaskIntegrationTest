@@ -1,0 +1,21 @@
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import javax.swing.*;
+
+public class BorderLayoutTaskIntegrationTest {
+
+    @Test
+    void testTypingInTextArea() throws Exception {
+        BorderLayoutTask[] app = new BorderLayoutTask[1];
+
+        SwingUtilities.invokeAndWait(() -> {
+            app[0] = new BorderLayoutTask();
+        });
+
+        SwingUtilities.invokeAndWait(() -> {
+            app[0].textArea.setText("Hello World");
+        });
+
+        assertEquals("Hello World", app[0].textArea.getText());
+    }
+}
