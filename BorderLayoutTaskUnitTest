@@ -1,0 +1,36 @@
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class BorderLayoutTaskUnitTest {
+
+    @Test
+    void testFrameCreated() {
+        BorderLayoutTask app = new BorderLayoutTask();
+        assertNotNull(app.frame);
+        assertEquals("BorderLayout Demo", app.frame.getTitle());
+    }
+
+    @Test
+    void testTitleLabel() {
+        BorderLayoutTask app = new BorderLayoutTask();
+        assertEquals("Application Title", app.titleLabel.getText());
+    }
+
+    @Test
+    void testWestPanelButtonsCount() {
+        BorderLayoutTask app = new BorderLayoutTask();
+        assertEquals(3, app.panelWest.getComponentCount());
+    }
+
+    @Test
+    void testTextAreaExists() {
+        BorderLayoutTask app = new BorderLayoutTask();
+        assertNotNull(app.textArea);
+    }
+
+    @Test
+    void testSubmitButtonText() {
+        BorderLayoutTask app = new BorderLayoutTask();
+        assertEquals("Submit", app.submitButton.getText());
+    }
+}
